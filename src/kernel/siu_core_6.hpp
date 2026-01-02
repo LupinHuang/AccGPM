@@ -368,16 +368,8 @@ inline void siu_core_dataflow(
                         last_element_reg_out, pop_mask_A, pop_mask_B);
 }
 
-// =============================================================================
-// 新增：基于 BATCH_SIZE×FIFO 的“每拍一批”流式 SIU（用于消除 siu_intersection_cached 外层 while 的串行依赖）
-// 设计要点：
-// - 输入侧：把 cache_n_v1 / cache_n_v2 先按 lane（idx % BATCH_SIZE）灌入 BATCH_SIZE 个 FIFO。
-// - 每个周期：从 A[i] FIFO 取队头，与 B[N-1-i] FIFO 队头比较，直接生成 MIN 之后的向量并推进对应 FIFO。
-// - 后级：CAS/Merge/Compact 采用流式 while+PIPELINE II=1；Merge 内部用局部变量保存 last_element 状态，
-//         在收到 is_last 后复位（避免 static 触发潜在 RAW 依赖问题）。
-// - 功能保持不变：MIN 选择逻辑、CAS 网络、Merge 交集计算与 Compact 压实逻辑完全复用原实现。
-// =============================================================================
 
+// -----------------------------------------------------------------------------
 static constexpr int SIU_FIFO_DEPTH = (MAX_BCSR_BLOCKS / BATCH_SIZE);
 static_assert(SIU_FIFO_DEPTH * BATCH_SIZE == MAX_BCSR_BLOCKS,
               "MAX_BCSR_BLOCKS must be divisible by BATCH_SIZE for lane FIFOs");
@@ -903,47 +895,6 @@ inline void store_siu_result_fifo(long long total_hits, int &out_result) {
     out_result = static_cast<int>(total_hits);
 }
 
-// 顶层封装：保持与 siu_core_4 中 pipelined 接口类似的调用方式，便于 task_executor 替换。
-inline void siu_intersection_cached_fifo_pipelined(
-    const data_t cache_n_v1[MAX_BCSR_BLOCKS],
-    int size_v1,
-    const data_t cache_n_v2[MAX_BCSR_BLOCKS],
-    int size_v2,
-    int upper_bound,
-    int &out_result
-) {
-#pragma HLS INLINE off
-    hls::stream<process_data_vector> min_to_cas_stream;
-    hls::stream<process_data_vector> cas_to_merge_stream;
-    hls::stream<process_data_vector> merge_to_compact_stream;
-    hls::stream<bool> ctrl_f2c;
-    hls::stream<bool> ctrl_c2m;
-    hls::stream<bool> ctrl_m2cp;
-    hls::stream<bool> ctrl_cp2acc;
-
-    hls::stream<data_t> compact_out[BATCH_SIZE];
-
-#pragma HLS STREAM variable=min_to_cas_stream depth=2
-#pragma HLS STREAM variable=cas_to_merge_stream depth=2
-#pragma HLS STREAM variable=merge_to_compact_stream depth=BATCH_SIZE
-#pragma HLS STREAM variable=ctrl_f2c depth=2
-#pragma HLS STREAM variable=ctrl_c2m depth=2
-#pragma HLS STREAM variable=ctrl_m2cp depth=2
-#pragma HLS STREAM variable=ctrl_cp2acc depth=2
-#pragma HLS STREAM variable=compact_out depth=2
-
-    long long total_hits = 0;
-
-#pragma HLS DATAFLOW
-    Feeder_FIFO_MIN_stage(cache_n_v1, size_v1, cache_n_v2, size_v2, upper_bound,
-                          min_to_cas_stream, ctrl_f2c);
-    CAS_stage_stream_fifo(min_to_cas_stream, cas_to_merge_stream, ctrl_f2c, ctrl_c2m);
-    Merge_stage_stream_fifo(cas_to_merge_stream, merge_to_compact_stream, ctrl_c2m, ctrl_m2cp);
-    Compact_stage_stream_fifo(merge_to_compact_stream, compact_out, ctrl_m2cp, ctrl_cp2acc);
-    Accumulate_stage_fifo(compact_out, ctrl_cp2acc, total_hits);
-
-    store_siu_result_fifo(total_hits, out_result);
-}
 ////////////////////
 //新的顶层封装：支持输出交集块结果（输出：out_blocks + out_len）
 inline void plan5_siu_collect_intersection_blocks(
