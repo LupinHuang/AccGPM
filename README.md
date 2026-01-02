@@ -1,3 +1,72 @@
+# GPM_old_code
+
+## 代码文件说明
+
+### 主机端代码
+
+- **`host/host.cpp`**: 主机端主程序
+  - 负责加载图数据（CSR 格式）
+  - 将图数据转换为 BCSR 格式
+  - 生成矩形匹配任务并进行粗粒度剪枝（Residue 位图剪枝）
+  - 通过 XRT 与 FPGA 通信，传输数据和任务
+  - 调用 FPGA 内核执行计算
+  - 收集结果并与 CPU 基准结果对比验证
+
+- **`host/xrt.ini`**: XRT 运行时配置文件
+  - 配置 XRT 运行时的各种参数
+
+### FPGA 内核代码
+
+- **`src/testSIU.cpp`**: FPGA 内核顶层入口
+  - 定义内核接口 `rectangle_kernel_v5`
+  - 实现任务预取、分发和结果收集的流水线
+  - 协调 4 个并行处理单元（PE）的工作
+
+- **`src/kernel/task_executor.hpp`**: 任务执行器
+  - 实现 PE（Processing Element）工作流程
+  - 包含 Load Worker：从 HBM 加载邻接表数据，支持缓存复用和 512-bit burst 读取
+  - 包含 Compute Worker：执行 SIU 集合交集计算
+  - 实现任务分发和负载均衡
+
+- **`src/kernel/siu_core.hpp`**: SIU 核心算法实现
+  - 实现 Sorted Intersection Unit（排序交集单元）
+  - 包含 MIN Stage：选择两个排序序列的最小元素
+  - 包含 CAS Stage：Bitonic 排序网络，进行并行排序和匹配检测
+  - 包含 MERGE Stage：合并匹配的元素并计算位图交集
+  - 包含 COMPACT Stage：压缩有效结果
+
+- **`include/merge_kernel_SIU.h`** 和 **`src/merge_kernel_SIU.h`**: 内核头文件
+  - 定义 BCSR 数据格式（32-bit 紧凑表示：24-bit 索引 + 8-bit 位图）
+  - 定义 RectangleTask 任务结构
+  - 定义各种常量和数据结构
+
+### 配置文件
+
+- **`env.sh`**: 环境变量配置脚本
+  - 设置 Vitis、Vivado 和 XRT 的环境变量
+  - 需要根据实际安装路径修改
+
+- **`u55C.cfg`**: FPGA 连接配置文件
+  - 定义内核名称和实例化
+  - 配置 HBM Bank 映射（HBM[0-6]）
+  - 配置性能分析选项
+
+### 编译脚本
+
+- **`sw_emu.sh`**: 软件仿真编译脚本
+  - 编译主机程序
+  - 生成软件仿真用的 xclbin 文件
+  - 设置软件仿真模式并运行测试
+
+- **`hw_emu.sh`**: 硬件仿真编译脚本
+  - 编译主机程序
+  - 生成硬件仿真用的 xclbin 文件
+  - 设置硬件仿真模式并运行测试
+
+- **`hardware_implement.sh`**: 硬件实现编译脚本
+  - 编译主机程序
+  - 生成实际硬件可用的 xclbin 比特流文件
+  - 使用 Vivado 进行综合和实现（耗时最长）
 
 ## 环境配置
 
