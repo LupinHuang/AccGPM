@@ -1,0 +1,166 @@
+<ENTRY>
+{
+ "thisFile": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/test1.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jan  2 16:40:43 2026",
+ "timestampMillis": "1767343243285",
+ "buildStep": {
+  "cmdId": "0dd31b97-ce48-40f5-90dd-e0c0e570beb7",
+  "name": "v++",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/test1/test1.steps.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t sw_emu --platform xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k subgraph_kernel_plan5_v1 -I./src -o ./sw_emu_1/test1.xo ./src/testSIU_v7_gemini_1.cpp ",
+  "args": [
+   "-t",
+   "sw_emu",
+   "--platform",
+   "xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "-c",
+   "-k",
+   "subgraph_kernel_plan5_v1",
+   "-I./src",
+   "-o",
+   "./sw_emu_1/test1.xo",
+   "./src/testSIU_v7_gemini_1.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:40:43 2026",
+ "timestampMillis": "1767343243286",
+ "status": {
+  "cmdId": "0dd31b97-ce48-40f5-90dd-e0c0e570beb7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Jan  2 16:40:46 2026",
+ "timestampMillis": "1767343246570",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_SW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "subgraph_kernel_plan5_v1",
+     "file": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/test1.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/CONNECT/jhuang683/AccGPM_origin/src/testSIU_v7_gemini_1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:40:46 2026",
+ "timestampMillis": "1767343246577",
+ "buildStep": {
+  "cmdId": "a52d0fd9-6e3b-4d11-94e6-cf5a7693ad87",
+  "name": "vitis_hls",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/test1/subgraph_kernel_plan5_v1/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/CONNECT/jhuang683/AccGPM_origin/_x/test1/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/test1/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:40:46 2026",
+ "timestampMillis": "1767343246577",
+ "status": {
+  "cmdId": "a52d0fd9-6e3b-4d11-94e6-cf5a7693ad87",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:10 2026",
+ "timestampMillis": "1767343270165",
+ "status": {
+  "cmdId": "a52d0fd9-6e3b-4d11-94e6-cf5a7693ad87",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:10 2026",
+ "timestampMillis": "1767343270241",
+ "status": {
+  "cmdId": "0dd31b97-ce48-40f5-90dd-e0c0e570beb7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:10 2026",
+ "timestampMillis": "1767343270365",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/reports/test1/v++_compile_test1_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:10 2026",
+ "timestampMillis": "1767343270368",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/v++_compile_test1_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

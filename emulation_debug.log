@@ -1,0 +1,87 @@
+INFO: [HW-EMU 01] Hardware emulation runs simulation underneath. Using a large data set will result in long simulation times. It is recommended that a small dataset is used for faster execution. The flow uses approximate models for Global memories and interconnect and hence the performance data generated is approximate.
+INFO::[ Vitis-EM 22 ] [Time elapsed: 10 minute(s) 43 seconds, Emulation time: 0.387477 ms]
+Data transfer between kernel(s) and global memory(s)
+siu_core_v5:m_axi_gmem10-HBM[23]          RD = 0.000 KB               WR = 0.008 KB        
+siu_core_v5:m_axi_gmem_pe0_L3-HBM[3]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L4-HBM[4]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L0-HBM[6]          RD = 6.234 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L1-HBM[7]          RD = 44.293 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L2-HBM[8]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L3-HBM[9]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L4-HBM[10]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L0-HBM[11]          RD = 6.359 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L1-HBM[12]          RD = 57.898 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L2-HBM[13]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem11-HBM[24]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L3-HBM[14]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L4-HBM[15]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L0-HBM[16]          RD = 6.305 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L1-HBM[17]          RD = 55.066 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L2-HBM[18]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L3-HBM[19]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L4-HBM[20]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem12-HBM[25]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem13-HBM[26]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem8-HBM[21]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem9-HBM[22]          RD = 0.250 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L0-HBM[0]          RD = 6.539 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L1-HBM[1]          RD = 51.711 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L2-HBM[2]          RD = 0.000 KB               WR = 0.000 KB        
+
+INFO: [HW-EMU 06-0] Waiting for the simulator process to exit
+INFO: [HW-EMU 06-1] All the simulator processes exited successfully
+INFO: [HW-EMU 07-0] Please refer the path "/home/CONNECT/jhuang683/AccGPM_origin/host/.run/3685888/hw_emu/device0/binary_0/behav_waveform/xsim/simulate.log" for more detailed simulation infos, errors and warnings.
+Compute Units: Running Time and Stalls
+Compute Unit, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+siu_core_v5,371.901,99.927,0.000,0.000
+
+Functions: Running Time and Stalls
+Compute Unit, Function, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+siu_core_v5,entry_proc_U0,0.003,0.000,0.000,0.000
+siu_core_v5,Block_entry53_proc_U0,0.247,0.000,0.000,0.000
+siu_core_v5,plan5_scan_all_stage_U0,334.063,86.852,0.000,0.000
+siu_core_v5,plan5_scan_all_stage_U0/grp_plan5_scan_all_stage_Pipeline_V0_SCAN_fu_104,333.293,86.648,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0,371.391,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0/grp_plan5_pipeline_pe_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0/grp_plan5_pipeline_pe_df_fu_561,360.089,96.532,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0,351.697,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0/grp_plan5_pipeline_pe_2_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0/grp_plan5_pipeline_pe_df_fu_561,340.395,91.285,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0,369.284,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0/grp_plan5_pipeline_pe_3_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0/grp_plan5_pipeline_pe_df_fu_561,357.982,95.983,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0,368.057,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0/grp_plan5_pipeline_pe_4_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0/grp_plan5_pipeline_pe_df_fu_561,356.755,95.673,0.000,0.000
+siu_core_v5,result_collector_U0,371.898,99.927,0.000,0.000
+
+Compute Units: Port Data Transfer
+Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
+siu_core_v5,m_axi_gmem_pe0_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem8,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem11,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem12,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem13,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem9,0.000,0.000,0.010,0.003
+siu_core_v5,m_axi_gmem10,0.010,0.003,0.000,0.000
+
+

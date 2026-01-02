@@ -1,0 +1,53 @@
+Compute Units: Running Time and Stalls
+Compute Unit, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+siu_core_v5,371.901,99.927,0.000,0.000
+
+Functions: Running Time and Stalls
+Compute Unit, Function, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+siu_core_v5,entry_proc_U0,0.003,0.000,0.000,0.000
+siu_core_v5,Block_entry53_proc_U0,0.247,0.000,0.000,0.000
+siu_core_v5,plan5_scan_all_stage_U0,334.063,86.852,0.000,0.000
+siu_core_v5,plan5_scan_all_stage_U0/grp_plan5_scan_all_stage_Pipeline_V0_SCAN_fu_104,333.293,86.648,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0,371.391,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0/grp_plan5_pipeline_pe_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_U0/grp_plan5_pipeline_pe_df_fu_561,360.089,96.532,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0,351.697,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0/grp_plan5_pipeline_pe_2_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_2_U0/grp_plan5_pipeline_pe_df_fu_561,340.395,91.285,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0,369.284,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0/grp_plan5_pipeline_pe_3_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_3_U0/grp_plan5_pipeline_pe_df_fu_561,357.982,95.983,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0,368.057,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0/grp_plan5_pipeline_pe_4_Pipeline_ROW_PTR_LOAD_AND_REPL_fu_548,11.056,0.000,0.000,0.000
+siu_core_v5,plan5_pipeline_pe_4_U0/grp_plan5_pipeline_pe_df_fu_561,356.755,95.673,0.000,0.000
+siu_core_v5,result_collector_U0,371.898,99.927,0.000,0.000
+
+Compute Units: Port Data Transfer
+Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
+siu_core_v5,m_axi_gmem_pe0_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe0_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe1_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe2_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l0,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l1,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l2,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l3,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem_pe3_l4,0.000,0.000,0.000,0.000
+siu_core_v5,m_axi_gmem8,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem11,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem12,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem13,0.000,0.000,11.049,2.971
+siu_core_v5,m_axi_gmem9,0.000,0.000,0.010,0.003
+siu_core_v5,m_axi_gmem10,0.010,0.003,0.000,0.000
+

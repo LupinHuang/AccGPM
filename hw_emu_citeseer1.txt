@@ -1,0 +1,61 @@
+================================================
+  Plan5 Subgraph Matching (Triangle test)
+================================================
+INFO: Loading and processing graph...
+  Vertices: 3312
+  BCSR Data Size: 8462 elements
+  Rectangle Tasks: (unused in this run)
+
+--- CPU Baseline ---
+  Count: 1166
+  Time:  18.8107 ms
+
+--- FPGA Acceleration ---
+INFO: [HW-EMU 05] Path of the simulation directory : /home/CONNECT/jhuang683/AccGPM_origin/host/.run/3685888/hw_emu/device0/binary_0/behav_waveform/xsim
+
+ server socket name is	/tmp/CONNECT\jhuang683/device0_0_3685888
+INFO: [HW-EMU 01] Hardware emulation runs simulation underneath. Using a large data set will result in long simulation times. It is recommended that a small dataset is used for faster execution. The flow uses approximate models for Global memories and interconnect and hence the performance data generated is approximate.
+configuring dataflow mode with ert polling
+scheduler config ert(1), dataflow(1), slots(16), cudma(0), cuisr(0), cdma(0), cus(1)
+INFO: Transferring data...
+INFO: Starting Kernel...
+INFO::[ Vitis-EM 22 ] [Time elapsed: 10 minute(s) 43 seconds, Emulation time: 0.387477 ms]
+Data transfer between kernel(s) and global memory(s)
+siu_core_v5:m_axi_gmem10-HBM[23]          RD = 0.000 KB               WR = 0.008 KB        
+siu_core_v5:m_axi_gmem_pe0_L3-HBM[3]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L4-HBM[4]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L0-HBM[6]          RD = 6.234 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L1-HBM[7]          RD = 44.293 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L2-HBM[8]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L3-HBM[9]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe1_L4-HBM[10]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L0-HBM[11]          RD = 6.359 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L1-HBM[12]          RD = 57.898 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L2-HBM[13]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem11-HBM[24]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L3-HBM[14]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe2_L4-HBM[15]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L0-HBM[16]          RD = 6.305 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L1-HBM[17]          RD = 55.066 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L2-HBM[18]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L3-HBM[19]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe3_L4-HBM[20]          RD = 0.000 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem12-HBM[25]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem13-HBM[26]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem8-HBM[21]          RD = 12.941 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem9-HBM[22]          RD = 0.250 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L0-HBM[0]          RD = 6.539 KB               WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L1-HBM[1]          RD = 51.711 KB              WR = 0.000 KB        
+siu_core_v5:m_axi_gmem_pe0_L2-HBM[2]          RD = 0.000 KB               WR = 0.000 KB        
+
+  Count: 1166
+  Kernel Time:  606052 ms
+
+=== Summary ===
+CPU       : 1166
+FPGA      : 1166
+
+PASS! Speedup (CPU/KERNEL): 3.10381e-05x
+INFO: [HW-EMU 06-0] Waiting for the simulator process to exit
+INFO: [HW-EMU 06-1] All the simulator processes exited successfully
+INFO: [HW-EMU 07-0] Please refer the path "/home/CONNECT/jhuang683/AccGPM_origin/host/.run/3685888/hw_emu/device0/binary_0/behav_waveform/xsim/simulate.log" for more detailed simulation infos, errors and warnings.

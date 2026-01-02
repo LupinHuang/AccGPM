@@ -1,0 +1,579 @@
+<ENTRY>
+{
+ "thisFile": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/testSIU_sw_emu.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:14 2026",
+ "timestampMillis": "1767343274766",
+ "buildStep": {
+  "cmdId": "550904ec-d4d3-4a2a-b8c4-8b9e994c7162",
+  "name": "v++",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/link.steps.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t sw_emu --platform xilinx_u55c_gen3x16_xdma_3_202210_1 -l ./sw_emu_1/test1.xo --config ./src/u55C_v6_gemini_1.cfg -o ./sw_emu_1/testSIU_sw_emu.xclbin ",
+  "args": [
+   "-t",
+   "sw_emu",
+   "--platform",
+   "xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "-l",
+   "./sw_emu_1/test1.xo",
+   "--config",
+   "./src/u55C_v6_gemini_1.cfg",
+   "-o",
+   "./sw_emu_1/testSIU_sw_emu.xclbin"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/CONNECT/jhuang683/AccGPM_origin/src/u55C_v6_gemini_1.cfg",
+    "content": "# ============================================================================\n[connectivity]\nnk=subgraph_kernel_plan5_v1:1:siu_core_v5\n\n# HBM Bank Mapping\n# Phase-1 mapping: keep one (v1,v2) bank pair per PE, and fan out to L0~L4 ports.\n# PE0 -\u003e HBM[0]/HBM[1]\nsp=siu_core_v5.gmem_pe0_v1_L0:HBM[0]\nsp=siu_core_v5.gmem_pe0_v2_L0:HBM[0]\nsp=siu_core_v5.gmem_pe0_v1_L1:HBM[1]\nsp=siu_core_v5.gmem_pe0_v2_L1:HBM[1]\nsp=siu_core_v5.gmem_pe0_v1_L2:HBM[2]\nsp=siu_core_v5.gmem_pe0_v2_L2:HBM[2]\nsp=siu_core_v5.gmem_pe0_v1_L3:HBM[3]\nsp=siu_core_v5.gmem_pe0_v2_L3:HBM[3]\nsp=siu_core_v5.gmem_pe0_v1_L4:HBM[4]\nsp=siu_core_v5.gmem_pe0_v2_L4:HBM[4]\n\n# PE1 -\u003e HBM[2]/HBM[3]\nsp=siu_core_v5.gmem_pe1_v1_L0:HBM[6]\nsp=siu_core_v5.gmem_pe1_v2_L0:HBM[6]\nsp=siu_core_v5.gmem_pe1_v1_L1:HBM[7]\nsp=siu_core_v5.gmem_pe1_v2_L1:HBM[7]\nsp=siu_core_v5.gmem_pe1_v1_L2:HBM[8]\nsp=siu_core_v5.gmem_pe1_v2_L2:HBM[8]\nsp=siu_core_v5.gmem_pe1_v1_L3:HBM[9]\nsp=siu_core_v5.gmem_pe1_v2_L3:HBM[9]\nsp=siu_core_v5.gmem_pe1_v1_L4:HBM[10]\nsp=siu_core_v5.gmem_pe1_v2_L4:HBM[10]\n\n# PE2 -\u003e HBM[4]/HBM[5]\nsp=siu_core_v5.gmem_pe2_v1_L0:HBM[11]\nsp=siu_core_v5.gmem_pe2_v2_L0:HBM[11]\nsp=siu_core_v5.gmem_pe2_v1_L1:HBM[12]\nsp=siu_core_v5.gmem_pe2_v2_L1:HBM[12]\nsp=siu_core_v5.gmem_pe2_v1_L2:HBM[13]\nsp=siu_core_v5.gmem_pe2_v2_L2:HBM[13]\nsp=siu_core_v5.gmem_pe2_v1_L3:HBM[14]\nsp=siu_core_v5.gmem_pe2_v2_L3:HBM[14]\nsp=siu_core_v5.gmem_pe2_v1_L4:HBM[15]\nsp=siu_core_v5.gmem_pe2_v2_L4:HBM[15]\n\n# PE3 -\u003e HBM[6]/HBM[7]\nsp=siu_core_v5.gmem_pe3_v1_L0:HBM[16]\nsp=siu_core_v5.gmem_pe3_v2_L0:HBM[16]\nsp=siu_core_v5.gmem_pe3_v1_L1:HBM[17]\nsp=siu_core_v5.gmem_pe3_v2_L1:HBM[17]\nsp=siu_core_v5.gmem_pe3_v1_L2:HBM[18]\nsp=siu_core_v5.gmem_pe3_v2_L2:HBM[18]\nsp=siu_core_v5.gmem_pe3_v1_L3:HBM[19]\nsp=siu_core_v5.gmem_pe3_v2_L3:HBM[19]\nsp=siu_core_v5.gmem_pe3_v1_L4:HBM[20]\nsp=siu_core_v5.gmem_pe3_v2_L4:HBM[20]\n\nsp=siu_core_v5.gmem_row_ptr_pe0:HBM[21]\nsp=siu_core_v5.gmem_row_ptr_pe1:HBM[24]\nsp=siu_core_v5.gmem_row_ptr_pe2:HBM[25]\nsp=siu_core_v5.gmem_row_ptr_pe3:HBM[26]\nsp=siu_core_v5.gmem_plan:HBM[22]\nsp=siu_core_v5.out_result:HBM[23]\n\n[profile]\ndata=all:all:all\nstall=all:all\n"
+   }
+  ],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:14 2026",
+ "timestampMillis": "1767343274768",
+ "status": {
+  "cmdId": "550904ec-d4d3-4a2a-b8c4-8b9e994c7162",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Jan  2 16:41:17 2026",
+ "timestampMillis": "1767343277932",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_SW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "testSIU_sw_emu",
+    "file": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/testSIU_sw_emu.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "subgraph_kernel_plan5_v1",
+     "file": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/test1.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/xo/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1/cpu_sources/testSIU_v7_gemini_1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "siu_core_v5"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:18 2026",
+ "timestampMillis": "1767343278241",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:18 2026",
+ "timestampMillis": "1767343278247",
+ "buildStep": {
+  "cmdId": "b3180002-3cb1-4505-b160-3d2b99a5f6de",
+  "name": "regiongen",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_regiongen.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/../runtime/bin/regiongen_new -v -m /home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.xml -r /home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.rtd -t alg -o xcl_top",
+  "args": [
+   "-v",
+   "-m",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.xml",
+   "-r",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.rtd",
+   "-t",
+   "alg",
+   "-o",
+   "xcl_top"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:18 2026",
+ "timestampMillis": "1767343278248",
+ "status": {
+  "cmdId": "b3180002-3cb1-4505-b160-3d2b99a5f6de",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:19 2026",
+ "timestampMillis": "1767343279222",
+ "status": {
+  "cmdId": "b3180002-3cb1-4505-b160-3d2b99a5f6de",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:19 2026",
+ "timestampMillis": "1767343279231",
+ "buildStep": {
+  "cmdId": "3c286370-e4e8-416e-a6bf-1e5e3fdd0c8c",
+  "name": "gcc",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1_kernel_gcc.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/gcc -I . -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../include -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl -I /data-hdd/opt/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl -I /data-hdd/opt/Xilinx/Vitis/2023.2/bin/../data/emulation/include -I /usr/include/x86_64-linux-gnu -std=c++14 -I /home/CONNECT/jhuang683/AccGPM_origin/src -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/testSIU_v7_gemini_1.o -MP -MF obj/testSIU_v7_gemini_1.Cd /home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/xo/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1/cpu_sources/testSIU_v7_gemini_1.cpp -o obj/testSIU_v7_gemini_1.o",
+  "args": [
+   "-I",
+   ".",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../include",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/../data/emulation/include",
+   "-I",
+   "/usr/include/x86_64-linux-gnu",
+   "-std=c++14",
+   "-I",
+   "/home/CONNECT/jhuang683/AccGPM_origin/src",
+   "-fPIC",
+   "-g",
+   "-c",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-MD",
+   "-MT",
+   "obj/testSIU_v7_gemini_1.o",
+   "-MP",
+   "-MF",
+   "obj/testSIU_v7_gemini_1.Cd",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/xo/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1/cpu_sources/testSIU_v7_gemini_1.cpp",
+   "-o",
+   "obj/testSIU_v7_gemini_1.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:19 2026",
+ "timestampMillis": "1767343279233",
+ "status": {
+  "cmdId": "3c286370-e4e8-416e-a6bf-1e5e3fdd0c8c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281606",
+ "status": {
+  "cmdId": "3c286370-e4e8-416e-a6bf-1e5e3fdd0c8c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281611",
+ "buildStep": {
+  "cmdId": "daa48978-71ed-4ad1-81f8-e68eac464b96",
+  "name": "ar",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1_ar.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/binutils-2.26/bin/ar -cr /home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.csim_cu.a /home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/obj/testSIU_v7_gemini_1.o",
+  "args": [
+   "-cr",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.csim_cu.a",
+   "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/subgraph_kernel_plan5_v1/obj/testSIU_v7_gemini_1.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281612",
+ "status": {
+  "cmdId": "daa48978-71ed-4ad1-81f8-e68eac464b96",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281655",
+ "status": {
+  "cmdId": "daa48978-71ed-4ad1-81f8-e68eac464b96",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281660",
+ "buildStep": {
+  "cmdId": "88ea74eb-06c5-4ab6-934e-a6a34bcaf680",
+  "name": "g++",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_xcl_top_gpp.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/g++ -I . -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../include -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl -I /data-hdd/opt/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl -I /data-hdd/opt/Xilinx/Vitis/2023.2/bin/../data/emulation/include -I /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include -fPIC -g -DHLS_STREAM_THREAD_SAFE -std=c++14 -fpermissive -c -MD -MT obj/xcl_top.o -MP -MF obj/xcl_top.CXXd xcl_top.cpp -o obj/xcl_top.o",
+  "args": [
+   "-I",
+   ".",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../include",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/../common/technology/autopilot/opencl",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/../data/emulation/include",
+   "-I",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/auto_cc/include",
+   "-fPIC",
+   "-g",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-std=c++14",
+   "-fpermissive",
+   "-c",
+   "-MD",
+   "-MT",
+   "obj/xcl_top.o",
+   "-MP",
+   "-MF",
+   "obj/xcl_top.CXXd",
+   "xcl_top.cpp",
+   "-o",
+   "obj/xcl_top.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:21 2026",
+ "timestampMillis": "1767343281661",
+ "status": {
+  "cmdId": "88ea74eb-06c5-4ab6-934e-a6a34bcaf680",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283133",
+ "status": {
+  "cmdId": "88ea74eb-06c5-4ab6-934e-a6a34bcaf680",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283136",
+ "buildStep": {
+  "cmdId": "5bc57752-a0d6-46e9-b534-fa107f6e4252",
+  "name": "g++",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_top_gpp.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/g++ -fPIC -DHLS_STREAM_THREAD_SAFE -std=c++14 -Wall -shared -Wl,--whole-archive,-soname,testSIU_sw_emu.so -o testSIU_sw_emu.so subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.csim_cu.a obj/xcl_top.o -Wl,--no-whole-archive -Wl,--as-needed -L /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lib/lnx64.o -lhlsmathsim -L /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1 -lgmp -lmpfr -lIp_floating_point_v7_1_bitacc_cmodel -Wl,-rpath,/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1 -L /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fft_v9_1 -lIp_xfft_v9_1_bitacc_cmodel -L /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fir_v7_0 -lgmp -lIp_fir_compiler_v7_2_bitacc_cmodel -L /data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/lib/csim -lhlsmc++-GCC46 -L /data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/6.2.0/ -lgcov",
+  "args": [
+   "-fPIC",
+   "-DHLS_STREAM_THREAD_SAFE",
+   "-std=c++14",
+   "-Wall",
+   "-shared",
+   "-Wl,--whole-archive,-soname,testSIU_sw_emu.so",
+   "-o",
+   "testSIU_sw_emu.so",
+   "subgraph_kernel_plan5_v1/subgraph_kernel_plan5_v1.csim_cu.a",
+   "obj/xcl_top.o",
+   "-Wl,--no-whole-archive",
+   "-Wl,--as-needed",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lib/lnx64.o",
+   "-lhlsmathsim",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1",
+   "-lgmp",
+   "-lmpfr",
+   "-lIp_floating_point_v7_1_bitacc_cmodel",
+   "-Wl,-rpath,/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fpo_v7_1",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fft_v9_1",
+   "-lIp_xfft_v9_1_bitacc_cmodel",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/tools/fir_v7_0",
+   "-lgmp",
+   "-lIp_fir_compiler_v7_2_bitacc_cmodel",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vitis_HLS/2023.2/bin/../lnx64/lib/csim",
+   "-lhlsmc++-GCC46",
+   "-L",
+   "/data-hdd/opt/Xilinx/Vivado/2023.2/tps/lnx64/gcc-8.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/6.2.0/",
+   "-lgcov"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283137",
+ "status": {
+  "cmdId": "5bc57752-a0d6-46e9-b534-fa107f6e4252",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283314",
+ "status": {
+  "cmdId": "5bc57752-a0d6-46e9-b534-fa107f6e4252",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283502",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283515",
+ "buildStep": {
+  "cmdId": "e907ffff-6295-4dff-9d54-71d10063b098",
+  "name": "xclbinutil",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_xclbinutil.log",
+  "commandLine": "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/xclbinutil --add-section BITSTREAM:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.so --force --target sw_emu --add-section :JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.rtd --append-section :JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_xml.rtd --add-section BUILD_METADATA:JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.xml --add-section SYSTEM_METADATA:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/systemDiagramModel.json --output /home/CONNECT/jhuang683/AccGPM_origin/./sw_emu_1/testSIU_sw_emu.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.so",
+   "--force",
+   "--target",
+   "sw_emu",
+   "--add-section",
+   ":JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.rtd",
+   "--append-section",
+   ":JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/testSIU_sw_emu.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/CONNECT/jhuang683/AccGPM_origin/_x/link/int/systemDiagramModel.json",
+   "--output",
+   "/home/CONNECT/jhuang683/AccGPM_origin/./sw_emu_1/testSIU_sw_emu.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283516",
+ "status": {
+  "cmdId": "e907ffff-6295-4dff-9d54-71d10063b098",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283875",
+ "status": {
+  "cmdId": "e907ffff-6295-4dff-9d54-71d10063b098",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283878",
+ "buildStep": {
+  "cmdId": "6224806d-cfb3-45b2-bb27-d4c1794ec9c3",
+  "name": "xclbinutil",
+  "logFile": "/home/CONNECT/jhuang683/AccGPM_origin/sw_emu_1/testSIU_sw_emu.xclbin.info",
+  "commandLine": "/data-hdd/opt/Xilinx/Vitis/2023.2/bin/xclbinutil --quiet --info --input /home/CONNECT/jhuang683/AccGPM_origin/./sw_emu_1/testSIU_sw_emu.xclbin",
+  "args": [
+   "--quiet",
+   "--info",
+   "--input",
+   "/home/CONNECT/jhuang683/AccGPM_origin/./sw_emu_1/testSIU_sw_emu.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/CONNECT/jhuang683/AccGPM_origin"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:23 2026",
+ "timestampMillis": "1767343283879",
+ "status": {
+  "cmdId": "6224806d-cfb3-45b2-bb27-d4c1794ec9c3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:24 2026",
+ "timestampMillis": "1767343284251",
+ "status": {
+  "cmdId": "6224806d-cfb3-45b2-bb27-d4c1794ec9c3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:24 2026",
+ "timestampMillis": "1767343284276",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  2 16:41:24 2026",
+ "timestampMillis": "1767343284279",
+ "status": {
+  "cmdId": "550904ec-d4d3-4a2a-b8c4-8b9e994c7162",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:24 2026",
+ "timestampMillis": "1767343284400",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/reports/link/v++_link_testSIU_sw_emu_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  2 16:41:24 2026",
+ "timestampMillis": "1767343284403",
+ "report": {
+  "path": "/home/CONNECT/jhuang683/AccGPM_origin/_x/v++_link_testSIU_sw_emu_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
